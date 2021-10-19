@@ -1,0 +1,48 @@
+@import "global";
+
+.header-container {
+  display: flex;
+  width: 100vw;
+  background-color: $primary-color;
+  padding: 1rem;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100;
+
+  .header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    max-width: 1080px;
+
+    .logo-content {
+      text-decoration: none;
+      color: #fcfcfc;
+      font-weight: 700;
+      font-size: 2rem;
+    }
+
+    .nav-content {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 32%;
+      a {
+        display: flex;
+        align-items: center;
+        color: #fcfcfc;
+        font-size: 1.25rem;
+        text-decoration: none;
+        font-weight: 700;
+
+        svg {
+          margin-right: 0.75rem;
+        }
+      }
+    }
+  }
+}

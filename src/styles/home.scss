@@ -1,0 +1,25 @@
+@import "global";
+
+.home-container {
+  margin-top: 6rem;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+
+  h1 {
+    width: 100%;
+    max-width: 1080px;
+    border-bottom: 2px solid $divider-color;
+  }
+
+  .produto-grid-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
+    width: 100%;
+    max-width: 1080px;
+    margin-top: 2rem;
+  }
+}
