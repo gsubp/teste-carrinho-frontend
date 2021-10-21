@@ -5,8 +5,9 @@
   width: 100vw;
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
+  justify-content: center;
   align-items: center;
+  padding: 1rem;
 
   h1 {
     width: 100%;
@@ -21,5 +22,21 @@
     width: 100%;
     max-width: 1080px;
     margin-top: 2rem;
+  }
+}
+
+@media (max-width: 748px) {
+  .home-container {
+    .produto-grid-container {
+      grid-template-columns: 1fr;
+    }
+  }
+}
+
+@media (min-width: 800px) and (max-width: 1080px) {
+  .home-container {
+    .produto-grid-container {
+      grid-template-columns: repeat(2, 1fr);
+    }
   }
 }

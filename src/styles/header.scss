@@ -30,7 +30,6 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      width: 32%;
       a {
         display: flex;
         align-items: center;
@@ -39,9 +38,32 @@
         text-decoration: none;
         font-weight: 700;
 
-        svg {
-          margin-right: 0.75rem;
+        span {
+          margin-left: 0.75rem;
         }
+      }
+      .label-content {
+        background-color: $secundary-color;
+        border-radius: 100%;
+        color: $primary-color;
+        font-weight: 400;
+        font-size: 1rem;
+        width: 2rem;
+        height: 2rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-left: 1rem;
+      }
+    }
+  }
+}
+
+@media (max-width: 748px) {
+  .nav-content {
+    a {
+      > span {
+        display: none;
       }
     }
   }

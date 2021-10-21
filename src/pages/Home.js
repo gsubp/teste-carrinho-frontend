@@ -2,25 +2,28 @@ import React, { useEffect, useState } from "react";
 import Header from "../components/Header";
 import "../styles/home.scss";
 import ProdutoItem from "../components/ProdutoItem";
-import dataJSON from "../data/abaixo-10-reais.json";
+import api from "../services/api";
+
 
 export default function Home() {
-    const [ data, setData ] = useState(null);
+    const [ data, setData ] = useState([]);
     useEffect(() => {
-        console.log(dataJSON.items[0].name);
+        async function fetchData() {
+            const response = await api.get("produtos");
+            console.log(response.data)
+            setData(response.data);
+        }
+        fetchData();
     }, []);
     return (
         <div className="home-container">
-            <Header/>
             <h1 className="tittle">Conheça Nossos Produtos</h1>
             <div className="produto-grid-container">
                 {
-                    dataJSON.items.map((item, index) => (
+                    data.map((item, index) => (
                         <ProdutoItem
+                            item = {item}
                             key={index}
-                            imageUrl={item.imageUrl} 
-                            nome={item.name}
-                            price={`R$ ${item.price / 100}`}
                         />
                     ))
                 }
